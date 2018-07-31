@@ -1,9 +1,9 @@
 # About this Repo
 
-[![Build Status](https://travis-ci.org/anaxexperience/base-php.svg?branch=master)](https://travis-ci.org/anaxexperience/base-php)
-[![Docker Pulls](https://img.shields.io/docker/pulls/anaxexperience/base-php.svg)](https://hub.docker.com/r/anaxexperience/base-php)
-[![Docker Stars](https://img.shields.io/docker/stars/anaxexperience/base-php.svg)](https://hub.docker.com/r/anaxexperience/base-php)
-[![Docker Layers](https://images.microbadger.com/badges/image/anaxexperience/base-php.svg)](https://microbadger.com/images/anaxexperience/base-php)
+[![Build Status](https://travis-ci.org/anaxexp/base-php.svg?branch=master)](https://travis-ci.org/anaxexp/base-php)
+[![Docker Pulls](https://img.shields.io/docker/pulls/anaxexp/base-php.svg)](https://hub.docker.com/r/anaxexp/base-php)
+[![Docker Stars](https://img.shields.io/docker/stars/anaxexp/base-php.svg)](https://hub.docker.com/r/anaxexp/base-php)
+[![Docker Layers](https://images.microbadger.com/badges/image/anaxexp/base-php.svg)](https://microbadger.com/images/anaxexp/base-php)
 
 This repository is a fork of https://github.com/docker-library/php with a few changes:
 
@@ -15,9 +15,9 @@ This repository is a fork of https://github.com/docker-library/php with a few ch
 ## Docker Images
 
 * All images are based on Alpine Linux 3.7 (except legacy 5.3 on Alpine 3.4)
-* Base image: [anaxexperience/alpine](https://github.com/anaxexp/alpine)
+* Base image: [anaxexp/alpine](https://github.com/anaxexp/alpine)
 * [Travis CI builds](https://travis-ci.org/anaxexp/base-php) 
-* [Docker Hub](https://hub.docker.com/r/anaxexperience/base-php)
+* [Docker Hub](https://hub.docker.com/r/anaxexp/base-php)
 
 [_(Dockerfile 7.2)_]: https://github.com/anaxexp/base-php/tree/master/7.2/alpine3.7/fpm/Dockerfile.anaxexp
 [_(Dockerfile 7.1)_]: https://github.com/anaxexp/base-php/tree/master/7.1/alpine3.7/fpm/Dockerfile.anaxexp

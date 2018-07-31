@@ -3,7 +3,7 @@
 PHP_VER ?= 5.6.37
 ALPINE_VER ?= 3.7
 
-REPO = anaxexperience/base-php
+REPO = anaxexp/base-php
 NAME = base-php-$(PHP_VER)
 
 ifeq ($(TAG),)
