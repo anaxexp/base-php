@@ -140,14 +140,14 @@ RUN set -xe \
 # bundled pcre does not support JIT on s390x
 # https://manpages.debian.org/stretch/libpcre3-dev/pcrejit.3.en.html#AVAILABILITY_OF_JIT_SUPPORT
 		$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') \
-		$(test "${PHP_DEBUG}" = 1 && echo '--enable-debug') \
 		\
+        $(test "${PHP_DEBUG}" = 1 && echo '--enable-debug') \
 		$PHP_EXTRA_CONFIGURE_ARGS \
 	&& make -j "$(nproc)" \
 	&& make install \
-	&& if [[ $PHP_DEBUG != 1 ]]; then \
-	    { find /usr/local/bin /usr/local/sbin -type f -perm +0111 -exec strip --strip-all '{}' + || true; } \
-	    fi \
+    && if [[ $PHP_DEBUG != 1 ]]; then \
+	 { find /usr/local/bin /usr/local/sbin -type f -perm +0111 -exec strip --strip-all '{}' + || true; } \
+    fi \
 	&& make clean \
 	&& cd / \
 	&& docker-php-source delete \
