@@ -240,8 +240,9 @@ RUN set -eux; \
 	php --version; \
 	\
 # https://github.com/docker-library/php/issues/443
-	pecl update-channels; \
-	rm -rf /tmp/pear ~/.pearrc
+	&& pecl update-channels; \
+	&& rm -rf /tmp/pear \
+	&& rm -rf  ~/.pearrc
 
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
 

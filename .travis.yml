@@ -2,23 +2,49 @@ language: bash
 services: docker
 
 env:
-  global:
-    - BASE_IMAGE_STABILITY_TAG=2.0.1
-    - PHP72=7.2.8
-    - PHP71=7.1.20
-    - PHP70=7.0.31
-    - PHP56=5.6.37
-    - PHP53=5.3.29
-  matrix:
-    - PHP_VER="${PHP72}" ALPINE_VER=3.7 TAGS="${PHP_VER},7.2,7,latest"
-    - PHP_VER="${PHP71}" ALPINE_VER=3.7 TAGS="${PHP_VER},7.1"
-    - PHP_VER="${PHP70}" ALPINE_VER=3.7 TAGS="${PHP_VER},7.0"
-    - PHP_VER="${PHP56}" ALPINE_VER=3.7 TAGS="${PHP_VER},5.6,5"
-    - PHP_VER="${PHP53}" ALPINE_VER=3.4 TAGS="${PHP_VER},5.3"
-    - PHP_VER="${PHP72}" ALPINE_VER=3.7 PHP_DEBUG=1 TAGS="${PHP_VER}-debug,7.2-debug,7-debug"
-    - PHP_VER="${PHP71}" ALPINE_VER=3.7 PHP_DEBUG=1 TAGS="${PHP_VER}-debug,7.1-debug"
-    - PHP_VER="${PHP70}" ALPINE_VER=3.7 PHP_DEBUG=1 TAGS="${PHP_VER}-debug,7.0-debug"
-    - PHP_VER="${PHP56}" ALPINE_VER=3.7 PHP_DEBUG=1 TAGS="${PHP_VER}-debug,5.6-debug,5-debug"
+  - VERSION=7.2 VARIANT=stretch/cli
+  - VERSION=7.2 VARIANT=stretch/apache
+  - VERSION=7.2 VARIANT=stretch/fpm
+  - VERSION=7.2 VARIANT=stretch/zts
+  - VERSION=7.2 VARIANT=alpine3.7/cli
+  - VERSION=7.2 VARIANT=alpine3.7/fpm
+  - VERSION=7.2 VARIANT=alpine3.7/zts
+  - VERSION=7.2 VARIANT=alpine3.6/cli
+  - VERSION=7.2 VARIANT=alpine3.6/fpm
+  - VERSION=7.2 VARIANT=alpine3.6/zts
+  - VERSION=7.1 VARIANT=stretch/cli
+  - VERSION=7.1 VARIANT=stretch/apache
+  - VERSION=7.1 VARIANT=stretch/fpm
+  - VERSION=7.1 VARIANT=stretch/zts
+  - VERSION=7.1 VARIANT=jessie/cli
+  - VERSION=7.1 VARIANT=jessie/apache
+  - VERSION=7.1 VARIANT=jessie/fpm
+  - VERSION=7.1 VARIANT=jessie/zts
+  - VERSION=7.1 VARIANT=alpine3.7/cli
+  - VERSION=7.1 VARIANT=alpine3.7/fpm
+  - VERSION=7.1 VARIANT=alpine3.7/zts
+  - VERSION=7.0 VARIANT=stretch/cli
+  - VERSION=7.0 VARIANT=stretch/apache
+  - VERSION=7.0 VARIANT=stretch/fpm
+  - VERSION=7.0 VARIANT=stretch/zts
+  - VERSION=7.0 VARIANT=jessie/cli
+  - VERSION=7.0 VARIANT=jessie/apache
+  - VERSION=7.0 VARIANT=jessie/fpm
+  - VERSION=7.0 VARIANT=jessie/zts
+  - VERSION=7.0 VARIANT=alpine3.7/cli
+  - VERSION=7.0 VARIANT=alpine3.7/fpm
+  - VERSION=7.0 VARIANT=alpine3.7/zts
+  - VERSION=5.6 VARIANT=stretch/cli
+  - VERSION=5.6 VARIANT=stretch/apache
+  - VERSION=5.6 VARIANT=stretch/fpm
+  - VERSION=5.6 VARIANT=stretch/zts
+  - VERSION=5.6 VARIANT=jessie/cli
+  - VERSION=5.6 VARIANT=jessie/apache
+  - VERSION=5.6 VARIANT=jessie/fpm
+  - VERSION=5.6 VARIANT=jessie/zts
+  - VERSION=5.6 VARIANT=alpine3.7/cli
+  - VERSION=5.6 VARIANT=alpine3.7/fpm
+  - VERSION=5.6 VARIANT=alpine3.7/zts
 
 script:
   - cd "${PHP_VER:0:3}/alpine${ALPINE_VER}/fpm"

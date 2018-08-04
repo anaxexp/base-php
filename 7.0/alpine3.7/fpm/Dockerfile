@@ -156,9 +156,8 @@ RUN set -xe \
 	&& apk del .build-deps \
 	\
 # https://github.com/docker-library/php/issues/443
-	&& pecl update-channels; \
-	&& rm -rf /tmp/pear \
-	&& rm -rf  ~/.pearrc
+	&& pecl update-channels \
+	&& rm -rf /tmp/pear ~/.pearrc
 
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
 
