@@ -35,5 +35,9 @@ mv tmp update.anaxexp.sh
 
 ./update.anaxexp.sh
 
-rm Dockerfile-alpine.anaxexp.template
-rm update.anaxexp.sh
+if [[ ! -z Dockerfile-alpine.anaxexp.template ]]; then
+    rm Dockerfile-alpine.anaxexp.template
+fi
+if [[ ! -z update.anaxexp.sh ]]; then
+    rm update.anaxexp.sh
+fi

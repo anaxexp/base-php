@@ -87,7 +87,9 @@ RUN set -xe; \
 		done; \
 		gpg --batch --verify php.tar.xz.asc php.tar.xz; \
 		command -v gpgconf > /dev/null && gpgconf --kill all; \
-		rm -rf "$GNUPGHOME"; \
+		if [[ ! -z "$GNUPGHOME" ]]; then \
+		    rm -rf "$GNUPGHOME"; \
+		fi; \	
 	fi; \
 	\
 	apk del .fetch-deps
