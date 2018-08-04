@@ -31,7 +31,7 @@ sed -i '/fullVersion=/a\    sed -i -E "s/(PHP$majorVersion$minorVersion)=.*/\\1=
 sed -i '/fullVersion=/a\    sed -i -E "s/\\`$majorVersion\.$minorVersion\.[0-9]+\\`/\\`$fullVersion\\`/" README.md' tmp
 sed -i '/fullVersion=/a\\n    sed -i -E "s/\\`$majorVersion\.$minorVersion\.[0-9]+-debug\\`/\\`$fullVersion-debug\\`/" README.md' tmp
 
-mv tmp anaxexp.anaxexp.sh
+mv tmp update.anaxexp.sh
 
 ./update.anaxexp.sh
 
