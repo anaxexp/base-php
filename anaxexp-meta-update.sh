@@ -6,7 +6,7 @@ cp Dockerfile-alpine.template tmp
 # Change basic image.
 sed -i '/FROM alpine/i\ARG BASE_IMAGE_TAG\n' tmp
 sed -i '/FROM alpine/a\\nARG PHP_DEBUG' tmp
-sed -i 's/FROM alpine.*/FROM anaxexp\/alpine:${BASE_IMAGE_TAG}/' tmp
+sed -i 's/FROM alpine.*/FROM wodby\/alpine:${BASE_IMAGE_TAG}/' tmp
 
 # For -debug images.
 sed -i -E "s/\&\&(.+?-exec strip.+)/\1/" tmp
@@ -20,10 +20,10 @@ cp update.sh tmp
 # Exclude 5.3
 sed -i '/versions=( "${versions\[@\]%\/}" )/a\versions=( "${versions[@]:1}" )' tmp
 # Use our template for fmp alpine variants.
-sed -i 's/Dockerfile-alpine.template/Dockerfile-alpine.anaxexp.template/' tmp
+sed -i 's/Dockerfile-alpine.template/Dockerfile-alpine.wodby.template/' tmp
 sed -i -E 's/stretch jessie alpine.+?\;/alpine3.7;/' tmp
 sed -i 's/cli apache fpm zts/fpm/' tmp
-sed -i 's/$variant\/Dockerfile"/$variant\/Dockerfile.anaxexp"/' tmp
+sed -i 's/\/Dockerfile"/\/Dockerfile.wodby"/' tmp
 # Change .travis.yml modifications.
 sed -i -E 's/^(echo "\$travis.*)/#\1/' tmp
 sed -i '/fullVersion=/a\    sed -i -E "s/(PHP$majorVersion$minorVersion)=.*/\\1=$fullVersion/" .travis.yml\n' tmp
