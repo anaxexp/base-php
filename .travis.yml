@@ -8,13 +8,12 @@ env:
     - PHP71=7.1.20
     - PHP70=7.0.31
     - PHP56=5.6.37
-    - PHP53=5.3.29
+
   matrix:
     - PHP_VER="${PHP72}" ALPINE_VER=3.7 TAGS="${PHP_VER},7.2,7,latest"
     - PHP_VER="${PHP71}" ALPINE_VER=3.7 TAGS="${PHP_VER},7.1"
     - PHP_VER="${PHP70}" ALPINE_VER=3.7 TAGS="${PHP_VER},7.0"
     - PHP_VER="${PHP56}" ALPINE_VER=3.7 TAGS="${PHP_VER},5.6,5"
-    - PHP_VER="${PHP53}" ALPINE_VER=3.4 TAGS="${PHP_VER},5.3"
     - PHP_VER="${PHP72}" ALPINE_VER=3.7 PHP_DEBUG=1 TAGS="${PHP_VER}-debug,7.2-debug,7-debug"
     - PHP_VER="${PHP71}" ALPINE_VER=3.7 PHP_DEBUG=1 TAGS="${PHP_VER}-debug,7.1-debug"
     - PHP_VER="${PHP70}" ALPINE_VER=3.7 PHP_DEBUG=1 TAGS="${PHP_VER}-debug,7.0-debug"
