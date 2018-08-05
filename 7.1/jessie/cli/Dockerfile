@@ -181,7 +181,7 @@ RUN set -eux; \
 	php --version; \
 	\
 # https://github.com/docker-library/php/issues/443
-	&& pecl update-channels; \
+	&& pecl update-channels \
 	\
 	&& rm -rf /tmp/pear ~/.pearrc
 
