@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 
 cp Dockerfile-alpine.template tmp
@@ -27,7 +28,6 @@ for target in "${delete[@]}"; do \
     fi \
   done \
 done' tmp
-
 # Use our template for fmp alpine variants.
 sed -i 's/Dockerfile-alpine.template/Dockerfile-alpine.anaxexp.template/' tmp
 sed -i -E 's/stretch jessie alpine.+?\;/alpine3.7;/' tmp
